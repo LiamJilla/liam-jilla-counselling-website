@@ -262,28 +262,39 @@
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <div class="eyebrow">Take the first step</div>
-          <h2>Let’s start with a conversation.</h2>
-          <p class="section-intro">Reaching out can feel like a big step. You don’t need to have everything figured out before making an enquiry. Let me know how best to contact you and I’ll respond as soon as practicable.</p>
-          <div class="notice"><strong>A note about privacy</strong><br>Please keep your enquiry brief and avoid including sensitive personal or health information in this form. Further information about privacy and consent can be provided before counselling begins.</div>
-        </div>
-        <div class="contact-box">
-          <form id="contactForm">
-            <label for="name">Your name</label><input id="name" name="name" autocomplete="name" required>
-            <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required>
-            <label for="phone">Phone number <span style="font-weight:400;color:#7a857d">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel">
-            <label for="age">Who is the enquiry for?</label>
-            <select id="age" name="age"><option>Myself</option><option>My young person / child</option><option>Someone else (with their knowledge)</option><option>General enquiry</option></select>
-            <label for="message">Brief message</label><textarea id="message" name="message" placeholder="For example, I’d like to ask about appointment availability." required></textarea>
-            <button class="btn" type="submit" style="width:100%;margin-top:18px">Prepare email enquiry →</button>
-            <p class="form-note" id="formNote">This form will open your email app with your enquiry ready to send. It does not submit or store information on this website.</p>
-          </form>
-        </div>
-      </div>
-    </section>
+ <form name="counselling-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="counselling-enquiry">
+
+  <div hidden>
+    <label>Leave this field empty:
+      <input name="bot-field">
+    </label>
+  </div>
+
+  <label for="name">Your name</label>
+  <input id="name" name="name" autocomplete="name" required>
+
+  <label for="email">Email address</label>
+  <input id="email" name="email" type="email" autocomplete="email" required>
+
+  <label for="phone">Phone number <span style="font-weight:400;color:#7a857d">(optional)</span></label>
+  <input id="phone" name="phone" type="tel" autocomplete="tel">
+
+  <label for="age">Who is the enquiry for?</label>
+  <select id="age" name="age">
+    <option>Myself</option>
+    <option>My young person / child</option>
+    <option>Someone else (with their knowledge)</option>
+    <option>General enquiry</option>
+  </select>
+
+  <label for="message">Brief message</label>
+  <textarea id="message" name="message" placeholder="For example, I’d like to ask about appointment availability." required></textarea>
+
+  <button class="btn" type="submit" style="width:100%;margin-top:18px">Send enquiry →</button>
+
+  <p class="form-note">Your enquiry will be submitted securely through this website's hosting provider. Please avoid including sensitive personal or health information. I will respond as soon as practicable.</p>
+</form>
 
     <section style="padding:52px 0">
       <div class="wrap">
